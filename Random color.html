@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Random Color Change</title>
+<style>
+     body {
+        margin: 0;
+        padding: 0;
+        background-color: black; 
+    }
+    .container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center; 
+        margin-top: 50px;
+        width: 50%;
+    }
+
+    .box {
+        width: 90px;
+        height: 90px;
+        border: 2px solid black;
+    }
+
+    button {
+        padding: 10px 10px;
+        font-size: 13px;
+        cursor: pointer;
+    }
+</style>
+</head>
+<body>
+
+<div class="container">
+    <div class="box" id="box1"></div>
+    <div class="box" id="box2"></div>
+    <div class="box" id="box3"></div>
+</div>
+
+<div class="container">
+    <button onclick="changeColor('box1')">Change Color</button>
+    <button onclick="changeColor('box2')">Change Color</button>
+    <button onclick="changeColor('box3')">Change Color</button>
+</div>
+
+<script>
+    function changeColor(boxId) {
+        var box = document.getElementById(boxId);
+        var randomColor = '#' + Math.floor(Math.random()*16777215).toString(16); 
+        box.style.backgroundColor = randomColor;
+    }
+</script>
+
+</body>
+</html>

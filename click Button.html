@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Button Click Show Form</title>
+<style>
+    body {
+        background-color: lightblue; 
+        font-family: Arial, sans-serif;
+        text-align: center; 
+ 
+    }
+    #output {
+        display: none;
+        text-align: center; 
+
+    }
+</style>
+</head>
+<body>
+
+<form id="inputForm">
+    <h2>Login</h2>
+
+    <label for="Username">Username:</label>
+    <input type="text" id="id" name="id"><br><br>
+    <label for="password">Password:</label>
+    <input type="password" id="password" name="password"><br><br>
+    <input type="button" value="Submit" id="submitButton"style="width: 100px;height: 100;">
+</form>
+
+<div id="output"></div>
+
+<script>
+    document.getElementById('submitButton').addEventListener('click', function() {
+        var id = document.getElementById('id').value;
+        var password = document.getElementById('password').value;
+        var outputDiv = document.getElementById('output');
+        
+        outputDiv.innerHTML = "<br>Username:- " + id + "<br>Password: " + password;
+        outputDiv.style.display = 'block';
+    });
+</script>
+
+</body>
+</html>
